@@ -22,3 +22,7 @@ export const CardContentInfo = styled.div`
     font-size: ${fontSizes.medium}px;
   }
 `;
+
+export const CardContentButtons = styled.div`
+  display: flex;
+`;

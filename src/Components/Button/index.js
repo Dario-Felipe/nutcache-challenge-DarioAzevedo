@@ -2,8 +2,14 @@ import React from 'react';
 import * as S from './style';
 import { useProvider } from '../../providers/provider';
 
-const Button = ({ id, children, close }) => {
-  const { showDetails, setShowDetails, setEmployeeID } = useProvider();
+const Button = ({ id, children, remove, details, close, handle }) => {
+  const {
+    showDetails,
+    setShowDetails,
+    setEmployeeID,
+    showDelete,
+    setShowDelete,
+  } = useProvider();
 
   return (
     <>
@@ -11,14 +17,26 @@ const Button = ({ id, children, close }) => {
         <S.ButtonContentElement
           type="button"
           onClick={
-            close
-              ? () => {
-                  setShowDetails(!showDetails);
-                }
-              : () => {
-                  setEmployeeID(id);
-                  setShowDetails(!showDetails);
-                }
+            remove
+              ? close
+                ? () => {
+                    setShowDelete(!showDelete);
+                    handle ? handle() : null;
+                  }
+                : () => {
+                    setEmployeeID(id);
+                    setShowDelete(!showDelete);
+                  }
+              : details
+              ? close
+                ? () => {
+                    setShowDetails(!showDetails);
+                  }
+                : () => {
+                    setEmployeeID(id);
+                    setShowDetails(!showDetails);
+                  }
+              : null
           }
         >
           {children}

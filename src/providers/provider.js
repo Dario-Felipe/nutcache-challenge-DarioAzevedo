@@ -6,6 +6,7 @@ const Provider = ({ children }) => {
   const [employees, setEmployees] = useState([]);
   const [showDetails, setShowDetails] = useState(false);
   const [employeeID, setEmployeeID] = useState('');
+  const [showDelete, setShowDelete] = useState(false);
 
   return (
     <ProviderContext.Provider
@@ -14,6 +15,8 @@ const Provider = ({ children }) => {
         setEmployees,
         showDetails,
         setShowDetails,
+        showDelete,
+        setShowDelete,
         employeeID,
         setEmployeeID,
       }}

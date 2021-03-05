@@ -25,7 +25,14 @@ const EmployeeCard = ({ id, email, name, startDate, team }) => (
           {team}
         </span>
       </S.CardContentInfo>
-      <Button id={id}>Show more</Button>
+      <S.CardContentButtons>
+        <Button id={id} details>
+          Show more
+        </Button>
+        <Button id={id} remove>
+          Delete
+        </Button>
+      </S.CardContentButtons>
     </S.EmployeeCardContent>
   </>
 );

@@ -63,7 +63,9 @@ const ModalDetails = () => {
             </span>
           </S.DetailsContentInfo>
           <S.DetailsContentFooter>
-            <Button close>Close</Button>
+            <Button details close>
+              Close
+            </Button>
           </S.DetailsContentFooter>
         </S.ModalDetailsContent>
       </S.SectionModalDetails>
