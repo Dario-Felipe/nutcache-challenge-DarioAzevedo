@@ -1,7 +1,8 @@
 import React from 'react';
 import * as S from './style';
+import Button from '../Button';
 
-const EmployeeCard = ({ email, name, startDate, team }) => (
+const EmployeeCard = ({ id, email, name, startDate, team }) => (
   <>
     <S.EmployeeCardContent>
       <S.CardContentInfo>
@@ -24,6 +25,7 @@ const EmployeeCard = ({ email, name, startDate, team }) => (
           {team}
         </span>
       </S.CardContentInfo>
+      <Button id={id}>Show more</Button>
     </S.EmployeeCardContent>
   </>
 );
