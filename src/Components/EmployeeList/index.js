@@ -4,9 +4,10 @@ import * as S from './style';
 import { useProvider } from '../../providers/provider';
 import Api from '../../services/api';
 import EmployeeCard from '../EmployeeCard/index';
+import ModalDetails from '../ModalDetails/index';
 
 const EmployeeList = () => {
-  const { employees, setEmployees } = useProvider();
+  const { employees, setEmployees, showDetails } = useProvider();
 
   const loadEmployees = async () => {
     const response = await Api.get();
@@ -34,9 +35,10 @@ const EmployeeList = () => {
                     id={item._id}
                     cpf={item.cpf}
                     email={item.email}
+                    birthDay={item.birthDay}
                     gender={item.gender}
                     name={item.name}
-                    startDate={item.start_date}
+                    startDate={item.startDate}
                     team={item.team}
                   />
                 </div>
@@ -45,6 +47,7 @@ const EmployeeList = () => {
           </div>
         </div>
       </S.SectionEmployeeList>
+      {showDetails ? <ModalDetails /> : null}
     </>
   );
 };

@@ -4,9 +4,20 @@ const ProviderContext = createContext();
 
 const Provider = ({ children }) => {
   const [employees, setEmployees] = useState([]);
+  const [showDetails, setShowDetails] = useState(false);
+  const [employeeID, setEmployeeID] = useState('');
 
   return (
-    <ProviderContext.Provider value={{ employees, setEmployees }}>
+    <ProviderContext.Provider
+      value={{
+        employees,
+        setEmployees,
+        showDetails,
+        setShowDetails,
+        employeeID,
+        setEmployeeID,
+      }}
+    >
       {children}
     </ProviderContext.Provider>
   );
