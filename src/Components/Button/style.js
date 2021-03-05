@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { colors } from '../../tokens';
 
 export const ButtonContent = styled.div`
-  margin-top: 10px;
+  margin: 10px 0 0 10px;
 `;
 
 export const ButtonContentElement = styled.button`
