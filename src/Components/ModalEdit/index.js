@@ -64,7 +64,7 @@ const ModalEdit = () => {
               <label>Name: </label>
               <input
                 type="text"
-                placeholder="Your name.:"
+                placeholder="Exemple.: Dário Felipe"
                 defaultValue={employeeInfo.name}
                 onChange={(e) => {
                   employeeInfo.name = e.target.value;
@@ -76,7 +76,7 @@ const ModalEdit = () => {
               <label>E-mail: </label>
               <input
                 type="text"
-                placeholder="Your E-mail.:"
+                placeholder="exemple@exemple.com"
                 defaultValue={employeeInfo.email}
                 onChange={(e) => {
                   employeeInfo.email = e.target.value;
@@ -103,7 +103,7 @@ const ModalEdit = () => {
                   /\d/,
                   /\d/,
                 ]}
-                placeholder="Your CPF.:"
+                placeholder="Exemple.: 123.456.789-99"
                 defaultValue={employeeInfo.cpf}
                 onChange={(e) => {
                   employeeInfo.cpf = e.target.value;
@@ -115,6 +115,8 @@ const ModalEdit = () => {
               <label>Birth Date: </label>
               <input
                 type="date"
+                min="1966-12-12"
+                max="2003-12-12"
                 defaultValue={employeeInfo.birthDay}
                 onChange={(e) => {
                   employeeInfo.birthDay = e.target.value;
@@ -126,7 +128,7 @@ const ModalEdit = () => {
               <label>Start Date: </label>
               <MaskedInput
                 mask={[/\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
-                placeholder="Your Start Date.:"
+                placeholder="Exemple.: 03/2021"
                 defaultValue={employeeInfo.startDate}
                 onChange={(e) => {
                   employeeInfo.startDate = e.target.value;
