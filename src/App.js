@@ -2,6 +2,7 @@ import React from 'react';
 import GlobalStyle from './theme/globalStyle';
 import Header from './components/Header';
 import EmployeeList from './components/EmployeeList';
+import FixedCreate from './components/FixedCreate';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <GlobalStyle />
       <Header />
       <EmployeeList />
+      <FixedCreate />
     </>
   );
 }
