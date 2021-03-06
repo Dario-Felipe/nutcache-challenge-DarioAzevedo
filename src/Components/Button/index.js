@@ -2,13 +2,15 @@ import React from 'react';
 import * as S from './style';
 import { useProvider } from '../../providers/provider';
 
-const Button = ({ id, children, remove, details, close, handle }) => {
+const Button = ({ id, children, remove, details, edit, close, handle }) => {
   const {
     showDetails,
     setShowDetails,
     setEmployeeID,
     showDelete,
     setShowDelete,
+    showEdit,
+    setShowEdit,
   } = useProvider();
 
   return (
@@ -35,6 +37,15 @@ const Button = ({ id, children, remove, details, close, handle }) => {
                 : () => {
                     setEmployeeID(id);
                     setShowDetails(!showDetails);
+                  }
+              : edit
+              ? close
+                ? () => {
+                    handle ? handle() : setShowEdit(!showEdit);
+                  }
+                : () => {
+                    setEmployeeID(id);
+                    setShowEdit(!showEdit);
                   }
               : null
           }
