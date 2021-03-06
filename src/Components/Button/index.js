@@ -2,7 +2,17 @@ import React from 'react';
 import * as S from './style';
 import { useProvider } from '../../providers/provider';
 
-const Button = ({ id, children, remove, details, edit, close, handle }) => {
+const Button = ({
+  id,
+  children,
+  fixed,
+  remove,
+  details,
+  edit,
+  create,
+  close,
+  handle,
+}) => {
   const {
     showDetails,
     setShowDetails,
@@ -11,13 +21,16 @@ const Button = ({ id, children, remove, details, edit, close, handle }) => {
     setShowDelete,
     showEdit,
     setShowEdit,
+    showCreate,
+    setShowCreate,
   } = useProvider();
 
   return (
     <>
-      <S.ButtonContent>
+      <S.ButtonContent fixed={fixed}>
         <S.ButtonContentElement
           type="button"
+          fixed={fixed}
           onClick={
             remove
               ? close
@@ -46,6 +59,14 @@ const Button = ({ id, children, remove, details, edit, close, handle }) => {
                 : () => {
                     setEmployeeID(id);
                     setShowEdit(!showEdit);
+                  }
+              : create
+              ? close
+                ? () => {
+                    handle ? handle() : setShowCreate(!showCreate);
+                  }
+                : () => {
+                    setShowCreate(!showCreate);
                   }
               : null
           }
