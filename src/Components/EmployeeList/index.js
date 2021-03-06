@@ -6,9 +6,16 @@ import Api from '../../services/api';
 import EmployeeCard from '../EmployeeCard/index';
 import ModalDetails from '../ModalDetails/index';
 import ModalDelete from '../ModalDelete/index';
+import ModalEdit from '../ModalEdit/index';
 
 const EmployeeList = () => {
-  const { employees, setEmployees, showDetails, showDelete } = useProvider();
+  const {
+    employees,
+    setEmployees,
+    showDetails,
+    showDelete,
+    showEdit,
+  } = useProvider();
 
   const loadEmployees = async () => {
     const response = await Api.get();
@@ -50,6 +57,7 @@ const EmployeeList = () => {
       </S.SectionEmployeeList>
       {showDetails ? <ModalDetails /> : null}
       {showDelete ? <ModalDelete /> : null}
+      {showEdit ? <ModalEdit /> : null}
     </>
   );
 };
