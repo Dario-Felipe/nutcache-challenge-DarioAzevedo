@@ -8,6 +8,7 @@ const Provider = ({ children }) => {
   const [employeeID, setEmployeeID] = useState('');
   const [showDelete, setShowDelete] = useState(false);
   const [showEdit, setShowEdit] = useState(false);
+  const [showCreate, setShowCreate] = useState(false);
 
   return (
     <ProviderContext.Provider
@@ -20,6 +21,8 @@ const Provider = ({ children }) => {
         setShowDelete,
         showEdit,
         setShowEdit,
+        showCreate,
+        setShowCreate,
         employeeID,
         setEmployeeID,
       }}

@@ -18,6 +18,7 @@ export const ListEmpety = styled.div`
   width: 100%;
   height: 400px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 
@@ -25,6 +26,7 @@ export const ListEmpety = styled.div`
     font-size: ${fontSizes.xlarge}px;
     color: #ccc;
     text-align: center;
+    margin-bottom: 20px;
   }
 
   ${media.lg} {

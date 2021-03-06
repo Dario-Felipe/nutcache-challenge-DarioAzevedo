@@ -1,5 +1,5 @@
-/* eslint-disable no-unused-vars */
 import React, { useEffect } from 'react';
+import Button from '../Button';
 import * as S from './style';
 import { useProvider } from '../../providers/provider';
 import Api from '../../services/api';
@@ -7,6 +7,7 @@ import EmployeeCard from '../EmployeeCard/index';
 import ModalDetails from '../ModalDetails/index';
 import ModalDelete from '../ModalDelete/index';
 import ModalEdit from '../ModalEdit/index';
+import ModalCreate from '../ModalCreate/index';
 
 const EmployeeList = () => {
   const {
@@ -15,6 +16,7 @@ const EmployeeList = () => {
     showDetails,
     showDelete,
     showEdit,
+    showCreate,
   } = useProvider();
 
   const loadEmployees = async () => {
@@ -35,6 +37,7 @@ const EmployeeList = () => {
             {employees.length === 0 ? (
               <S.ListEmpety>
                 <span>There is not any Employees ☹, can you add?</span>
+                <Button create>Add new employee</Button>
               </S.ListEmpety>
             ) : (
               employees.map((item) => (
@@ -58,6 +61,7 @@ const EmployeeList = () => {
       {showDetails ? <ModalDetails /> : null}
       {showDelete ? <ModalDelete /> : null}
       {showEdit ? <ModalEdit /> : null}
+      {showCreate ? <ModalCreate /> : null}
     </>
   );
 };
