@@ -1,8 +1,8 @@
 import React from 'react';
 import GlobalStyle from './theme/globalStyle';
-import Header from './components/Header';
-import EmployeeList from './components/EmployeeList';
-import FixedCreate from './components/FixedCreate';
+import Header from './Components/Header/index';
+import EmployeeList from './Components/EmployeeList/index';
+import FixedCreate from './Components/FixedCreate/index';
 
 function App() {
   return (
